@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Website</title>
+  <link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+
+  <div class="top-left">
+    <a href="characters.html" class="characters-button">Characters</a>
+  </div>
+
+  <div class="top-title">ECLIPSE</div>
+
+  <div class="top-time" id="time"></div>
+
+</div>
+
+  <h1 class="my-font"><strong>ECLIPSE</strong></h1>
+
+
+  <p class="subtitle">
+  The internet's newest sci-fi open-world videogame.
+</p>
+
+<div class="screenshot-row">
+
+  <img src="image1.avif" class="screenshot" alt="img1">
+  <img src="image2.jpg" class="screenshot" alt="img2">
+  <img src="image3.jpg" class="screenshot" alt="img3">
+
+</div>
+
+<div class="scroll-indicator">
+  <p>Scroll Down</p>
+  <div class="scroll-arrow">↓</div>
+</div>
+
+<div class="games-section">
+
+  <h2>Check out competing games</h2>
+
+  <div class="game-buttons">
+    <button onclick="showGame('game1')">Game 1</button>
+    <button onclick="showGame('game2')">Game 2</button>
+    <button onclick="showGame('game3')">Game 3</button>
+  </div>
+
+  <div class="game-display">
+    <img id="gameImage" src="" alt="Game Preview">
+  </div>
+
+</div>
+
+</div>
+
+<script>
+function showGame(game) {
+  const img = document.getElementById("gameImage");
+
+  if (game === "game1") {
+    img.src = "sub.jpg";
+  } 
+  else if (game === "game2") {
+    img.src = "cyber.webp";
+  } 
+  else if (game === "game3") {
+    img.src = "metroid.avif";
+  }
+
+  img.style.display = "block";
+}
+</script>
+
+<script>
+function updateTime() {
+  const now = new Date();
+
+  const options = {
+    timeZone: "America/New_York",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  };
+
+  const timeString = new Intl.DateTimeFormat("en-US", options).format(now);
+
+  document.getElementById("time").textContent = timeString;
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+</script>
+
+<div class="about-game">
+  <h2>About the Game</h2>
+
+  <p>
+    Humanity's final colony arrives in the Eclipse System in a ship, centuries after
+    Cryosleep. Ancient civilizations, conflicts,
+    and mysterious technology ready for your exploration.
+  </p>
+</div>
+
+<div class="release-section">
+  <h2>Release</h2>
+
+  <p>Releasing July 2027</p>
+</div>
+
+</body>
+</html>

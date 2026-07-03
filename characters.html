@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Characters</title>
+  <link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+
+  <div class="top-left">
+    <a href="index.html" class="characters-button">Home</a>
+  </div>
+
+  <div class="top-title">ECLIPSE</div>
+
+  <div class="top-time" id="time"></div>
+
+</div>
+
+<h1 class="my-font">Characters</h1>
+
+<p class="subtitle">
+Meet the characters of Eclipse.
+</p>
+
+<ul class="character-list">
+  <li>Captain Nova</li>
+  <li>Dr. Parsons</li>
+  <li>AURA</li>
+  <li>Commander Sahur</li>
+</ul>
+
+<div class="character-images">
+  <img src="tung.png" class="character-image" alt="Tung">
+  <img src="man.png" class="character-image" alt="Man">
+</div>
+
+
+<script>
+function updateTime() {
+  const now = new Date();
+
+  const options = {
+    timeZone: "America/New_York",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  };
+
+  document.getElementById("time").textContent =
+    new Intl.DateTimeFormat("en-US", options).format(now);
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>
